@@ -94,14 +94,58 @@
 
 						<!-- Contact -->
 							<article id="contact">
-								<h2 class="major">Contact</h2> Telefoon: +31 6 11146524 <p> E-mail: elanowiggers@live.com
+								<h2 class="major">Contact</h2> 
 								
-							        <h3>Woonplaats</h2> Louis Couperrusstraat 249 <p> 1822LJ Alkmaar Nederland
-							
-								<label for="copyBox">Copy this text:</label>
-                                                                <textarea id="copyBox" rows="4" cols="50" readonly>
-                                                                This is some text the user can copy.
-                                                                </textarea>
+							       <style>
+.code-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+textarea.code-block {
+  width: 100%;
+  height: 130px;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 14px;
+  background-color: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  resize: none;
+  overflow: auto;
+}
+
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+</style>
+
+<div class="code-container">
+  <textarea class="code-block" id="infoText" readonly>
+Name: Elano Wiggers
+Address: Example Street 123, 1234 AB Amsterdam
+Phone: +31 6 12345678
+  </textarea>
+  <button class="copy-button" onclick="copyInfo()">Copy</button>
+</div>
+
+<script>
+function copyInfo() {
+  const text = document.getElementById("infoText");
+  text.select();
+  text.setSelectionRange(0, 99999); // For mobile devices
+  document.execCommand("copy");
+  alert("Info copied to clipboard!");
+}
+</script>
+
 
 							
 							</article>
